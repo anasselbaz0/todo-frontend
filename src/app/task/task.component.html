@@ -1,0 +1,41 @@
+<div class="row">
+    
+    <div class="col-12">
+        
+        <div class="title">
+            <h1>Tasks</h1>
+        </div>
+              
+        <div id="view" class="block">
+            <table>
+                <thead>
+                    <th >Title</th>
+                    <th>Description</th>
+                    <th>Limit date</th>
+                    <th>Operations</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let task of tasks">
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.description }}</td>
+                        <td>{{ task.limitDate }}</td>
+                        <td>
+                            <button class="mr-2 ml-2" mat-fab color="accent"><mat-icon>create</mat-icon></button>       <!-- edit -->
+                            <button class="mr-2 ml-2" mat-fab color="warn"><mat-icon>cancel</mat-icon></button>         <!-- delete -->
+                            <button class="mr-2 ml-2" mat-fab color="primary"><mat-icon>favorite</mat-icon></button>    <!-- view -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button id="add-button" class="m-2" style="display: block;" mat-fab color="primary" (click)="viewAddTask()">
+            <mat-icon>add_circle</mat-icon>
+        </button>
+        
+        <div class="block" id="add-task" style="display: none;">
+          
+        </div>
+
+    </div>        
+</div>
